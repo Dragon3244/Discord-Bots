@@ -1,2 +1,2 @@
-# Discord Bots
-Draghun Bot and LuigiBot reside here
+# Draghun Bot
+DrahgunBot, version sent to me after the original was canceled.
