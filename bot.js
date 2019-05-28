@@ -25,8 +25,8 @@ bot.on('ready', function (evt) {
 		}
 	});
 	logger.info('|||[[[ Ready ')
-    logger.info('|||[[[ Connected ');
-    logger.info('|||[[[ Logged in as: ' + bot.username + ' - (' + bot.id + ')');
+   	logger.info('|||[[[ Connected ');
+    	logger.info('|||[[[ Logged in as: ' + bot.username + ' - (' + bot.id + ')');
 	logger.info('|||[[[ Start of log')
 });
 
@@ -53,35 +53,35 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, ':hamburger: :fries:')
 				logger.info(user + ' has executed the command fastfood')
 			break;
-			case '?spam':
+			case 'spam':
 				send(channelID, 'HOURHN4I UHNEUO GJETIOHE O HOETTOEOGHJO EO GETOG JGHJ RTJG ORTJHG ORTH ORTJH ORJH ORTJ ORTJHTJHORTJGHIORJHIOJBO RRTREFSFG')
 				logger.info(user + ' has executed the command spam')
 			break;
-			case '?pingeveryone':
+			case 'pingeveryone':
 				send(channelID, '@everyone')
 				logger.info(user + ' has executed the command pingeveryone')
 			break;
-			case '?randomnumber':
+			case 'randomnumber':
 				send(channelID, Math.floor(Math.random() * 101))
 				logger.info(user + ' has executed the command randomnumber')
 			break;
-			case '?help':
+			case 'help':
 				send(channelID, '**Commands:**\nl?hi - says hi to you\nl?blah does the blahblahblah thing\nl?macandcheese gives you mac and cheese\nl?fastfood gives you fast food\nl?spam spammity spam spam\nl?pingeveryone pings everyone\nl?randomnumber gives you a random number\nl?help shows this thing\nl?kill kills stuff\nl?succ s u c c\nl?howlongyourdickis shows how long it is\nl?votepewdiepie votes for pewdiepie\nl?votetseries votes for t-series\nl?credits shows the credits thing')
 				logger.info(user + ' has executed the command help')
 			break;
-			case '?kill':
+			case 'kill':
 				send(channelID, '***LOUD FUCKING SCREAMS OF HELL***')
 				logger.info(user + ' has executed the command kill')
 			break;
-			case '?succ':
+			case 'succ':
 				send(channelID, 'You have succed **' + Math.floor(Math.random() * 31) + '** dicks')
 				logger.info(user + ' has executed the command succ')
 			break;
-			case '?howlongyourdickis':
+			case 'howlongyourdickis':
 				send(channelID, 'Your dick is **' + Math.floor(Math.random() * 31) + '** centimeter(s) long')
 				logger.info(user + ' has executed the command howlongyourdickis')
 			break;
-			case '?credits':
+			case 'credits':
 				send(channelID, '**Credits:**\nQeaML#5450 for the helping of making a bot'
 			logger.info(user + ' has executed the command credits')
 			break;
