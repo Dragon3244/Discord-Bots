@@ -1,138 +1,120 @@
-// Code fixed up by QeaML. No thanks needed.
-// Discord: QeaML#5450   Twitter: @AEmpi0r
+//variables
 var Discord = require('discord.io');
-// better logger would be var logger = 'console'
-var logger = require('winston');
+var logger = "console";
 var auth = require('./auth.json');
 
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
-});
-bot.on('ready', function (evt) {
-    bot.setPresence({
-    status: "dnd",
-        game:{
-               name: "Thelp me get my dad back"
-        }
-    });
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-});
-bot.on('message', function (user, userID, channelID, message, evt) {
-    if (message.substring(0, 1) == 'T') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-	  var param = args[1];
-        args = args.splice(1);
-        switch(cmd) {
+//functions
+function get(i) {
+	switch(i){
+		case('random_1000'):
+			return Math.floor(Math.random * 1001)
+		break
+		case('random_100'):
+			return Math.floor(Math.random * 101)
+		break
+		case('random_10'):
+			return Math.floor(Math.random * 11)
+		break
+	}
+}
 
-		
-case('blend'):
-    if (param == 'undefined' || param == undefined) {
-        param = 'A THING';
-    };
-    bot.sendMessage({
-        to: channelID,
-        message: '***LOUD SCREAMING OF '+param+'***'
-    });
-break;
-case 'Jakesapples' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'Jake has ' + Math.floor(Math.random() * 3756) + ' apple(s)'
-    });
-break;
-case 'whoami' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'this but is basic but i will try to make it good.basic'
-    });
-break;
-case 'seriesisgay' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'Im not subbed to pewdiepie nor t-series'
-    });
-break;
-case 'series' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'आपकी माँ समलैंगिक इकाई है'
-    });
-break;
-case 'gay' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'your gay level is ' + Math.floor(Math.random() * 101) + '%'
-    });
-break;
-case 'uncensor' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'Tf no u perv'
-    });
-break;
-case 'gimmepopcorn' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'here u go :popcorn:'
-    });
-break;
-case 'whyamilikethis' :
-if ( userID > 396699211946655745) {
-bot.sendMessage({
-to: channelID,
-message: 'true'
+//create bot client
+var bot = new Discord.Client({
+	token: auth.token,
+	autorun: true
 });
-} else {
-bot.sendMessage({
-to: channelID,
-message: 'false'
+
+function send(c, t) {
+	bot.sendMessage({
+		to: c,
+		message: t
+	});
+}
+
+//bot's "ready" event
+bot.on('ready', function (evt) {
+	//set the bot's presence
+	bot.setPresence({
+		//DO NOT DISTURB THE BOT WITH UNNECCESSARY CRAP
+		status: "dnd",
+		//haha funny
+		game:{
+			name: "Thelp me get my dad back"
+		}
+	});
+	
+	logger.info('|||---===---|||');
+	logger.info('Connected');
+	logger.info('Logged in as: '+bot.username + ' - (' + bot.id + ')');
+	logger.info('|||---===---|||');
 });
-};
-break;
-case 'help' :
-    bot.sendMessage({
-        to: channelID,
-		message: '**Thelp**-shows this text\n**Tgimmepopcorn**-gives you popcorn\n**Tgay**-says how gay you are\n**Tuncensor**-uncensors an image\n**Tseries**-says something in Hindi\n**Tseriesisgay**-just see what happens\n**Tblend**-blends something\ni wont show the last command'
-    });
-	break;
-	case 'contact' :
-    bot.sendMessage({
-        to: channelID,
-        message: 'Contact my owner at 01010100#7782 on discord. Thanks to QeaML#5450 for help with coding.'
-    });
-break;
-case 'liedetector' :
-	var randomTo10 = Math.floor(Math.random * 10);
-    	if (randomTo10 <= 5 ) {
-bot.sendMessage({
-to:channelID,
-message: 'Lie detected!'
-});
-} else {
-bot.sendMessage({
-to:channelID,
-message: 'Truth detected!'
-});
-};break;
-case('throw'):
-    if (param == 'undefined' || param == undefined) {
-        param = 'air';
-    };
-    bot.sendMessage({
-        to: channelID,
-        message: user+' threw '+param+' off a bridge'
-    });
-break;
-         }
-     }
+
+//bot's "message" event
+bot.on('message', function (user, userID, channelID, message, evt) {
+	//check the first substring to be "T", and then process the text
+	if (message.substring(0, 1) == 'T') {
+		//make args the list of arguments
+		var args = message.substring(1).split(' ');
+		//first argument = command itself
+		var cmd = args[0];
+		//to be used later
+		var param = args[1];
+		args = args.splice(1);
+		//switch to the command
+		switch(cmd) {		
+			case('blend'):
+				if (param == 'undefined' || param == undefined) {
+					param = 'A THING';
+				};
+				send(channelID, '***LOUD SCREAMING OF '+param+'***')
+			break;
+			case 'jakesapples' :
+				send(channelID, 'Jake has ' + get('random_1000') + ' apple(s)');
+			break;
+			case 'whoami' :
+				send(channelID, 'this but is basic but i will try to make it good.basic'')
+			break;
+			case 'seriesisgay' :
+				send(channelID, 'Im not subbed to pewdiepie nor t-series')
+			break;
+			case 'series' :
+				send(channelID, 'आपकी माँ समलैंगिक इकाई है')
+			break;
+			case 'gay' :
+				send(channelID, 'your gay level is ' + get('random_100') + '%')
+			break;
+			case 'uncensor' :
+				send(channelID, 'Tf no u perv')
+			break;
+			case 'gimmepopcorn' :
+				send(channelID, 'here u go :popcorn:')
+			break;
+			case 'whyamilikethis' :
+				if ( userID > 396699211946655745) {
+					send(channelID, 'true')
+				} else {
+					send(channelID, 'false'
+				};
+			break;
+			case 'help' :
+				send(channelID, '**Thelp**-shows this text\n**Tgimmepopcorn**-gives you popcorn\n**Tgay**-says how gay you are\n**Tuncensor**-uncensors an image\n**Tseries**-says something in Hindi\n**Tseriesisgay**-just see what happens\n**Tblend**-blends something\ni wont show the last command')
+			break;
+			case 'contact' :
+				send(channelID, 'Contact my owner at 01010100#7782 on discord. Thanks to QeaML#5450 for help with coding.')
+			break;
+			case 'liedetector' :
+				if (randomTo10 <= 5 ) {
+					send(channelID, 'Lie detected!')
+				} else {
+					send(channelID, 'Truth detected!')
+				};
+			break;
+			case('throw'):
+				if (param == 'undefined' || param == undefined) {
+					param = 'air';
+				};
+				send(channelID, user+' threw '+param+' off a bridge')
+			break;
+		}
+	}
 });
