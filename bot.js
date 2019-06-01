@@ -4,14 +4,14 @@ var logger = "console";
 var auth = require('./auth.json');
 
 //functions
-function get() {
-	const random_1000 = function(){
+const get = {
+	random_1000: function(){
 		return Math.floor(Math.random * 1001)
-	}
-	const random_100 = function(){
+	},
+	random_100: function(){
 		return Math.floor(Math.random * 101)
-	}
-	const random_10 = function (){
+	},
+	random_10: function (){
 		return Math.floor(Math.random * 11)
 	}
 }
