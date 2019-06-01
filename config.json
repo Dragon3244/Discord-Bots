@@ -1,6 +1,6 @@
 {
-  "experimental":   False,
+  "experimental":   false,
   "log": {
-    "file":         True,
-    "console":      True 
+    "file":         true,
+    "console":      true 
 }
