@@ -67,7 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			send(channelID, 'Hi, my name is LuigiBot.')
 		break;
 		case 'blah':
-			send(channelID, 'Blahblahblah.'
+			send(channelID, 'Blahblahblah.')
 		break;
 		case 'macandcheese':
 			send(channelID, 'Here, have some mac and cheese.')
@@ -97,7 +97,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			send(channelID, 'Your dick is **' + Math.floor(Math.random() * 31) + '** centimeter(s) long')
 		break;
 		case 'credits':
-				send(channelID, '**Credits:**\nLuigiTV#7793 - made the bot originally\nQeaML#5450 - took the bot from it and mad eit better'
+			send(channelID, '**Credits:**\nLuigiTV#7793 - made the bot originally\nQeaML#5450 - took the bot from it and mad eit better'
 		break;
         }
 	log(user+' executed '+cmd)
