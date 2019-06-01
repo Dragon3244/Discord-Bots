@@ -24,10 +24,10 @@ function send(c, t) {
 * if log.file is enabled in config.json, everything is saved to log.txt
 */
 function log(text){
-	if(cfg.log.console == True){
+	if(cfg.log.console == true){
 		console.log(txt)
 	}
-	if(cfg.log.file == True){
+	if(cfg.log.file == true){
 		fs.openFile('log.txt', function(data, err) {
 			if(err){
 				throw(err)
