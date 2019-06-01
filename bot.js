@@ -4,17 +4,15 @@ var logger = "console";
 var auth = require('./auth.json');
 
 //functions
-function get(i) {
-	switch(i){
-		case('random_1000'):
-			return Math.floor(Math.random * 1001)
-		break
-		case('random_100'):
-			return Math.floor(Math.random * 101)
-		break
-		case('random_10'):
-			return Math.floor(Math.random * 11)
-		break
+function get() {
+	const random_1000 = function(){
+		return Math.floor(Math.random * 1001)
+	}
+	const random_100 = function(){
+		return Math.floor(Math.random * 101)
+	}
+	const random_10 = function (){
+		return Math.floor(Math.random * 11)
 	}
 }
 
@@ -69,7 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, '***LOUD SCREAMING OF '+param+'***')
 			break;
 			case 'jakesapples' :
-				send(channelID, 'Jake has ' + get('random_1000') + ' apple(s)');
+				send(channelID, 'Jake has ' + get.random_100 + ' apple(s)');
 			break;
 			case 'whoami' :
 				send(channelID, 'this but is basic but i will try to make it good.basic'')
@@ -81,7 +79,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, 'आपकी माँ समलैंगिक इकाई है')
 			break;
 			case 'gay' :
-				send(channelID, 'your gay level is ' + get('random_100') + '%')
+				send(channelID, 'your gay level is ' + get.random_100() + '%')
 			break;
 			case 'uncensor' :
 				send(channelID, 'Tf no u perv')
@@ -103,7 +101,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, 'Contact my owner at 01010100#7782 on discord. Thanks to QeaML#5450 for help with coding.')
 			break;
 			case 'liedetector' :
-				if (randomTo10 <= 5 ) {
+				if (get.random_10() <= 5 ) {
 					send(channelID, 'Lie detected!')
 				} else {
 					send(channelID, 'Truth detected!')
