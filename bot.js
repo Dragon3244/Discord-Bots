@@ -113,6 +113,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				};
 				send(channelID, user+' threw '+param+' off a bridge')
 			break;
+			case('spam'):
+				for(i=0;i==get.random_10;i++){
+					send(channelID, get.random_1000)
+				}
+			break;
 		}
 	}
 });
