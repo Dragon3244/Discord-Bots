@@ -1,6 +1,7 @@
 //constats
 const Discord = require('discord.io');
 const file = require('fs');
+const cfg = require("./config.json");
 
 //bot's discord client
 const bot = new Discord.Client({
@@ -8,6 +9,9 @@ const bot = new Discord.Client({
    autorun: true
 });
 
+/*send function, to minimalize the code
+* instead of using bot.sendMessage({<JSON here>}), we'd use send()
+*/
 function send(c, t) {
 	bot.sendMessage({
 		to: c,
@@ -15,19 +19,27 @@ function send(c, t) {
 	})
 }
 
+/*log function, logging everything the bot does
+* if log.console is enabled in cofig.json, everything is printed to the console
+* if log.file is enabled in config.json, everything is saved to log.txt
+*/
 function log(text){
-	console.log(txt)
-	fs.openFile('log.txt', function(data, err) {
-		if(err){
-			throw(err)
-		}else{
-			fs.writeFile('log.txt', data + "\n" + txt, function(err){
-				if(err){
-					throw(err)
-				}
-			})
-		}
-	})
+	if(cfg.log.console == True){
+		console.log(txt)
+	}
+	if(cfg.log.file == True){
+		fs.openFile('log.txt', function(data, err) {
+			if(err){
+				throw(err)
+			}else{
+				fs.writeFile('log.txt', data + "\n" + txt, function(err){
+					if(err){
+						throw(err)
+					}
+				})
+			}
+		})
+	}
 }
 
 //bot's "ready" event
