@@ -1,2 +1,2 @@
 # LuigiBot
-LuigiBot, version sent to me originally.
+LuigiBot, version further developed by it's original creator.
