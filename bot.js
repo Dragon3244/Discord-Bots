@@ -5,13 +5,13 @@ var auth = require('./auth.json');
 //functions
 const get = {
 	random_1000: function(){
-		return Math.floor(Math.random * 1001)
+		return Math.floor(Math.random() * 1001)
 	},
 	random_100: function(){
-		return Math.floor(Math.random * 101)
+		return Math.floor(Math.random() * 101)
 	},
 	random_10: function (){
-		return Math.floor(Math.random * 11)
+		return Math.floor(Math.random() * 11)
 	}
 }
 
