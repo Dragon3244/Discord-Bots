@@ -110,7 +110,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					send(channelID, 'Truth detected!')
 				};
 			break;
-			case('throw'):
+			case('hrow'):
 				if (param == 'undefined' || param == undefined) {
 					param = 'air';
 				};
