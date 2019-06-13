@@ -1,6 +1,5 @@
 //variables
 var Discord = require('discord.io');
-var logger = "console";
 var auth = require('./auth.json');
 
 //functions
@@ -14,6 +13,10 @@ const get = {
 	random_10: function (){
 		return Math.floor(Math.random * 11)
 	}
+}
+
+function print(txt){
+	console.log(txt)
 }
 
 //create bot client
@@ -41,10 +44,10 @@ bot.on('ready', function (evt) {
 		}
 	});
 	
-	logger.info('|||---===---|||');
-	logger.info('Connected');
-	logger.info('Logged in as: '+bot.username + ' - (' + bot.id + ')');
-	logger.info('|||---===---|||');
+	print('|||---===---|||');
+	print('Connected');
+	print('Logged in as: '+bot.username + ' - (' + bot.id + ')');
+	print('|||---===---|||');
 });
 
 //bot's "message" event
