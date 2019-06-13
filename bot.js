@@ -70,7 +70,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, 'Jake has ' + get.random_100 + ' apple(s)');
 			break;
 			case 'whoami' :
-				send(channelID, 'this but is basic but i will try to make it good.basic'')
+				send(channelID, 'this but is basic but i will try to make it good.basic')
 			break;
 			case 'seriesisgay' :
 				send(channelID, 'Im not subbed to pewdiepie nor t-series')
