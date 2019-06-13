@@ -91,7 +91,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				if ( userID > 396699211946655745) {
 					send(channelID, 'true')
 				} else {
-					send(channelID, 'false'
+					send(channelID, 'false')
 				};
 			break;
 			case 'help' :
