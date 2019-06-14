@@ -35,7 +35,7 @@ async def on_message(message):
 				try:
 					victim = message.content.replace(cmd, "")
 					await message.channel.send("**Loud screams of{0}**".format(victim))
-				execpt:
+				except:
 					await message.channel.send("You need to specify what do you want to kill!")
 			elif cmd == "succ":
 				dicks = randint(0, 25)
