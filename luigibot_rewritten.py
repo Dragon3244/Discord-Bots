@@ -13,7 +13,6 @@ async def on_message(message):
 			arg = message.content.split(" ")
 			cmd = arg[0].replace("l?", "")
 			cmd = cmd.lower()
-			arg.remove(cmd)
 			if cmd == "hi":
 				await message.channel.send("Hello, my name is Labut.")
 			elif cmd == "blah":
