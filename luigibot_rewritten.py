@@ -33,6 +33,7 @@ async def on_message(message):
 			elif cmd == "kill":
 				try:
 					victim = message.content.replace(cmd, "")
+					victim = victim.replace("l?", "")
 					await message.channel.send("**Loud screams of{0}**".format(victim))
 				except:
 					await message.channel.send("You need to specify what do you want to kill!")
