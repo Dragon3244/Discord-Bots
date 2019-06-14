@@ -11,7 +11,7 @@ async def on_message(message):
 	if not message.author.bot and message.guild is not None:
 		if message.content.startswith("l?"):
 			arg = message.content.split(" ")
-			cmd = a[0].replace("l?", "")
+			cmd = arg[0].replace("l?", "")
 			cmd = cmd.lower()
 			arg.remove(cmd)
 			if cmd == "hi":
