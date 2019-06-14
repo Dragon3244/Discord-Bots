@@ -16,7 +16,7 @@ async def on_message(message):
 			if cmd == "hi":
 				await message.channel.send("Hello, my name is Labut.")
 			elif cmd == "blah":
-				await mesasge.channel.send("blah *blah* **blah** ***blah***")
+				await message.channel.send("blah *blah* **blah** ***blah***")
 			elif cmd == "macandcheese":
 				await message.channel.send("Here, have some Mac and Cheese. *gives mac and cheese to <@{0.author.id}>*".format(message))
 			elif cmd == "fastfood":
