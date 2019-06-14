@@ -3,16 +3,10 @@ var Discord = require('discord.io');
 var auth = require('./auth.json');
 
 //functions
-const get = {
-	random_1000: function(){
-		return Math.floor(Math.random() * 1001)
-	},
-	random_100: function(){
-		return Math.floor(Math.random() * 101)
-	},
-	random_10: function (){
-		return Math.floor(Math.random() * 11)
-	}
+function getRandom(max){
+	var newMax = Number(max) + 1
+	var num = Math.floor(Math.random() * newMax)
+	return num
 }
 
 function print(txt){
@@ -70,7 +64,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, '***LOUD SCREAMING OF '+param+'***')
 			break;
 			case 'jakesapples' :
-				send(channelID, 'Jake has ' + get.random_100 + ' apple(s)');
+				send(channelID, 'Jake has ' + getRandom(1000000) + ' apple(s)');
 			break;
 			case 'whoami' :
 				send(channelID, 'this but is basic but i will try to make it good.basic')
@@ -82,7 +76,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, 'आपकी माँ समलैंगिक इकाई है')
 			break;
 			case 'gay' :
-				send(channelID, 'your gay level is ' + get.random_100() + '%')
+				send(channelID, 'your gay level is ' + getRandom(100) + '%')
 			break;
 			case 'uncensor' :
 				send(channelID, 'Tf no u perv')
@@ -104,7 +98,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				send(channelID, 'Contact my owner at 01010100#7782 on discord. Thanks to QeaML#5450 for help with coding.')
 			break;
 			case 'liedetector' :
-				if (get.random_10() <= 5 ) {
+				if (getRandom(10) <= 5 ) {
 					send(channelID, 'Lie detected!')
 				} else {
 					send(channelID, 'Truth detected!')
@@ -118,8 +112,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			break;
 			case('spam'):
 				for(i=0;i==10;i++){
-					send(channelID, get.random_1000)
+					send(channelID, getRandom(1000))
 				}
+			break;
+			default:
+				send(channelID, "That is *not* a command I know of!")
 			break;
 		}
 	}
