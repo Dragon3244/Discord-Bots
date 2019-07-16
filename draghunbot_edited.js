@@ -30,7 +30,7 @@ function send(c, t) {
 bot.on('ready', function (evt) {
 	//set the bot's presence
 	bot.setPresence({
-		//DO NOT DISTURB THE BOT WITH UNNECCESSARY CRAP
+		//DO NOT DISTURB THE BOT WITH UNNECCESSARY CRABS
 		status: "dnd",
 		//haha funny
 		game:{
@@ -92,7 +92,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				};
 			break;
 			case 'help' :
-				send(channelID, '**Thelp**-shows this text\n**Tgimmepopcorn**-gives you popcorn\n**Tgay**-says how gay you are\n**Tuncensor**-uncensors an image\n**Tseries**-says something in Hindi\n**Tseriesisgay**-just see what happens\n**Tblend**-blends something\n**Throw**-YEET\n**Tspam**-made by QeaML#5450 and doesnt work even though he is the smart coder\n**Twhyamilikethis**-also made by QeaML#5450 and i dont remember what it does\n**Tcontact**-my owners contacts\n**Twhoami**-i cant describe it\n**Tjakesapples**-says how many apples Jake has\n')
+				send(channelID, '**Thelp**-shows this text\n**Tgimmepopcorn**-gives you popcorn\n**Tgay**-says how gay you are\n**Tuncensor**-uncensors an image\n**Tseries**-says something in Hindi\n**Tseriesisgay**-just see what happens\n**Tblend**-blends something\n**Throw**-YEET\n**Tspam**-made by QeaML#5450 and doesnt work even though he is the smart coder\n**Twhyamilikethis**-also made by QeaML#5450 and i dont remember what it does\n**Tcontact**-my owners contacts\n**Twhoami**-i cant describe it\n**Tjakesapples**-says how many apples Jake has\nGo and suggest more commands at https://discord.gg/SQjYx8d')
 			break;
 			case 'contact' :
 				send(channelID, 'Contact my owner at 01010100#7782 on discord. Thanks to QeaML#5450 for help with coding.')
